@@ -3,4 +3,8 @@
   <string name="app_name">Huiza</string>
   <string name="product_title">Bicleta Niño</string>
   <string name="product_price">S/.100</string>
+
+  <string name="backdrop_title">¡Esprime la vida!</string>
+  <string name="backdrop_subtitle">muévete en bicleta</string>
+  
 </resources>

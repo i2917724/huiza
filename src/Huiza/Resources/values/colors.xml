@@ -24,4 +24,6 @@
   <color name="white">#FFFFFF</color>
   
   <!-- COLOR DIALOG 424242-->
+  <color name="viewBg">#f1f5f8</color>
+  <color name="album_title">#ffffff</color>
 </resources>

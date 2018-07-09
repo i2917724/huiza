@@ -8,10 +8,9 @@ using Android.Support.Design.Widget;
 using Android.Content;
 
 using System;
-using Huiza.Activitys;
 
 
-namespace Huiza
+namespace Huiza.Activities
 {
     [Activity(Label = "Huiza")]
     public class LoginActivity : AppCompatActivity

@@ -12,8 +12,6 @@ namespace Huiza.Models
         public string characteristics { get; set; }
         public string description { get; set; }
         public string category_id { get; set; }
-        public string created_at { get; set; }
-        public string updated_at { get; set; }
         public Category category { get; set; }
     }
 }

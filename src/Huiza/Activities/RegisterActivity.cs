@@ -14,7 +14,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 
-namespace Huiza.Activitys
+namespace Huiza.Activities
 {
     [Activity(Label = "RegisterActivity")]
     public class RegisterActivity : AppCompatActivity

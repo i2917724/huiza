@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Huiza.Models;
+using Square.Picasso;
 
 namespace Huiza.Adapters
 {
@@ -50,10 +51,11 @@ namespace Huiza.Adapters
                 var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
                 //replace with your item and your holder items
                 //comment back in
+                
                 view = inflater.Inflate(Resource.Layout.adapter_product, parent, false);
-                holder.Name = view.FindViewById<TextView>(Resource.Id.textViewName);
-                holder.Price = view.FindViewById<TextView>(Resource.Id.textViewPrice);
-
+                holder.Name = view.FindViewById<TextView>(Resource.Id.title);
+                holder.Price = view.FindViewById<TextView>(Resource.Id.price);
+                
                 view.Tag = holder;
             }
 
@@ -61,6 +63,10 @@ namespace Huiza.Adapters
             //fill in your items
             holder.Name.Text = list[position].name;
             holder.Price.Text = "S/." + list[position].price.ToString();
+
+            Picasso.With(context)
+                .Load(list[position].image)
+                .Into(view.FindViewById<ImageView>(Resource.Id.thumbnail));
 
             return view;
         }
