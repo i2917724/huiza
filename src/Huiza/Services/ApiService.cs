@@ -56,7 +56,60 @@
             }
         }
 
-        
+        public async Task<TokenResponse> GetToken(
+            string urlBase,
+            string email,
+            string password)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var response = await client.PostAsync("/api/auth/login",
+                    new StringContent(string.Format(
+                    "email={0}&password={1}",
+                    email, password),
+                    Encoding.UTF8, "application/x-www-form-urlencoded"));
+                var resultJSON = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<TokenResponse>(
+                    resultJSON);
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        public async Task<TokenResponse> GetTokenRegister(
+            string urlBase,
+            string email,
+            string password,
+            string name)
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var response = await client.PostAsync("/api/auth/register",
+                    new StringContent(string.Format(
+                    "email={0}&password={1}&name={2}",
+                    email, password,name),
+                    Encoding.UTF8, "application/x-www-form-urlencoded"));
+                var resultJSON = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<TokenResponse>(
+                    resultJSON);
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+
 
     }
 }

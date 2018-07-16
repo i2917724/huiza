@@ -6,7 +6,7 @@ using Android.Support.V7.App; //  material design
 using Android.Support.V7.Widget; 
 using Android.Support.Design.Widget;
 using Android.Content;
-
+using Huiza.Presenters;
 using System;
 
 
@@ -15,6 +15,7 @@ namespace Huiza.Activities
     [Activity(Label = "Huiza")]
     public class LoginActivity : AppCompatActivity
     {
+        LoginPresenter loginPresenter;
         TextView register;
         AppCompatButton login;
         EditText email;
@@ -32,44 +33,24 @@ namespace Huiza.Activities
             password = FindViewById<EditText>(Resource.Id.input_password);
 
             // cuando te hacen click = orden();
-            login.Click += loginClient;
-            register.Click += registerClient;
+            loginPresenter = new LoginPresenter(this);
+
+            login.Click += LoginClient;
+            register.Click += RegisterClient;
             
         }
-        public void registerClient(object sender, EventArgs args)
+        public void RegisterClient(object sender, EventArgs args)
         {
             Intent newActivity = new Intent(this, typeof(RegisterActivity));
             Finish();
             this.StartActivity(newActivity);
         }
-
-        public void loginClient(object sender, EventArgs args)
+        public void LoginClient(object sender, EventArgs args)
         {
-
-            if(string.IsNullOrEmpty(email.Text) || string.IsNullOrEmpty(password.Text)) //validate empty fields 
-            {
-                Snackbar.Make(login, "Campos vacíos!", Snackbar.LengthLong)
-                                .Show();
-
-            }
-            else if(email.Text != "huiza@gmail.com" || password.Text != "123456") //validate user
-            {
-                Snackbar.Make(login, "Usuario no válido!", Snackbar.LengthLong)
-                      .Show();
-            }
-            else if(email.Text == "huiza@gmail.com" && password.Text == "123456") // Success
-            {
-                Intent newActivity = new Intent(this, typeof(CatalogProductActivity));
-                Finish(); // matate
-                this.StartActivity(newActivity);
-            }
-            else // Error
-            {
-                Snackbar.Make(login, "Ups ocurrió un error!", Snackbar.LengthLong)
-                            .Show();
-            }
-
+            this.loginPresenter.Authentication(sender,args,email.Text,password.Text);
         }
+
+
     }
 }
 

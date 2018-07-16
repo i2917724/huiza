@@ -1220,44 +1220,44 @@ namespace Huiza
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0060
-			public const int abc_background_cache_hint_selector_material_dark = 2131361888;
-			
-			// aapt resource value: 0x7f0a0061
-			public const int abc_background_cache_hint_selector_material_light = 2131361889;
-			
 			// aapt resource value: 0x7f0a0062
-			public const int abc_btn_colored_borderless_text_material = 2131361890;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361890;
 			
 			// aapt resource value: 0x7f0a0063
-			public const int abc_btn_colored_text_material = 2131361891;
+			public const int abc_background_cache_hint_selector_material_light = 2131361891;
 			
 			// aapt resource value: 0x7f0a0064
-			public const int abc_color_highlight_material = 2131361892;
+			public const int abc_btn_colored_borderless_text_material = 2131361892;
 			
 			// aapt resource value: 0x7f0a0065
-			public const int abc_hint_foreground_material_dark = 2131361893;
+			public const int abc_btn_colored_text_material = 2131361893;
 			
 			// aapt resource value: 0x7f0a0066
-			public const int abc_hint_foreground_material_light = 2131361894;
+			public const int abc_color_highlight_material = 2131361894;
+			
+			// aapt resource value: 0x7f0a0067
+			public const int abc_hint_foreground_material_dark = 2131361895;
+			
+			// aapt resource value: 0x7f0a0068
+			public const int abc_hint_foreground_material_light = 2131361896;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int abc_input_method_navigation_guard = 2131361796;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int abc_primary_text_disable_only_material_dark = 2131361895;
-			
-			// aapt resource value: 0x7f0a0068
-			public const int abc_primary_text_disable_only_material_light = 2131361896;
-			
 			// aapt resource value: 0x7f0a0069
-			public const int abc_primary_text_material_dark = 2131361897;
+			public const int abc_primary_text_disable_only_material_dark = 2131361897;
 			
 			// aapt resource value: 0x7f0a006a
-			public const int abc_primary_text_material_light = 2131361898;
+			public const int abc_primary_text_disable_only_material_light = 2131361898;
 			
 			// aapt resource value: 0x7f0a006b
-			public const int abc_search_url_text = 2131361899;
+			public const int abc_primary_text_material_dark = 2131361899;
+			
+			// aapt resource value: 0x7f0a006c
+			public const int abc_primary_text_material_light = 2131361900;
+			
+			// aapt resource value: 0x7f0a006d
+			public const int abc_search_url_text = 2131361901;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int abc_search_url_text_normal = 2131361797;
@@ -1268,32 +1268,32 @@ namespace Huiza
 			// aapt resource value: 0x7f0a0007
 			public const int abc_search_url_text_selected = 2131361799;
 			
-			// aapt resource value: 0x7f0a006c
-			public const int abc_secondary_text_material_dark = 2131361900;
-			
-			// aapt resource value: 0x7f0a006d
-			public const int abc_secondary_text_material_light = 2131361901;
-			
 			// aapt resource value: 0x7f0a006e
-			public const int abc_tint_btn_checkable = 2131361902;
+			public const int abc_secondary_text_material_dark = 2131361902;
 			
 			// aapt resource value: 0x7f0a006f
-			public const int abc_tint_default = 2131361903;
+			public const int abc_secondary_text_material_light = 2131361903;
 			
 			// aapt resource value: 0x7f0a0070
-			public const int abc_tint_edittext = 2131361904;
+			public const int abc_tint_btn_checkable = 2131361904;
 			
 			// aapt resource value: 0x7f0a0071
-			public const int abc_tint_seek_thumb = 2131361905;
+			public const int abc_tint_default = 2131361905;
 			
 			// aapt resource value: 0x7f0a0072
-			public const int abc_tint_spinner = 2131361906;
+			public const int abc_tint_edittext = 2131361906;
 			
 			// aapt resource value: 0x7f0a0073
-			public const int abc_tint_switch_track = 2131361907;
+			public const int abc_tint_seek_thumb = 2131361907;
 			
-			// aapt resource value: 0x7f0a0052
-			public const int accent = 2131361874;
+			// aapt resource value: 0x7f0a0074
+			public const int abc_tint_spinner = 2131361908;
+			
+			// aapt resource value: 0x7f0a0075
+			public const int abc_tint_switch_track = 2131361909;
+			
+			// aapt resource value: 0x7f0a0054
+			public const int accent = 2131361876;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int accent_material_dark = 2131361800;
@@ -1301,14 +1301,14 @@ namespace Huiza
 			// aapt resource value: 0x7f0a0009
 			public const int accent_material_light = 2131361801;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int album_title = 2131361887;
+			// aapt resource value: 0x7f0a0061
+			public const int album_title = 2131361889;
 			
-			// aapt resource value: 0x7f0a005a
-			public const int aluminum = 2131361882;
+			// aapt resource value: 0x7f0a005c
+			public const int aluminum = 2131361884;
 			
-			// aapt resource value: 0x7f0a0053
-			public const int background = 2131361875;
+			// aapt resource value: 0x7f0a0055
+			public const int background = 2131361877;
 			
 			// aapt resource value: 0x7f0a000a
 			public const int background_floating_material_dark = 2131361802;
@@ -1322,11 +1322,11 @@ namespace Huiza
 			// aapt resource value: 0x7f0a000d
 			public const int background_material_light = 2131361805;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int @base = 2131361883;
+			// aapt resource value: 0x7f0a005d
+			public const int @base = 2131361885;
 			
-			// aapt resource value: 0x7f0a0055
-			public const int black = 2131361877;
+			// aapt resource value: 0x7f0a0057
+			public const int black = 2131361879;
 			
 			// aapt resource value: 0x7f0a000e
 			public const int bright_foreground_disabled_material_dark = 2131361806;
@@ -1376,8 +1376,8 @@ namespace Huiza
 			// aapt resource value: 0x7f0a0040
 			public const int design_bottom_navigation_shadow_color = 2131361856;
 			
-			// aapt resource value: 0x7f0a0074
-			public const int design_error = 2131361908;
+			// aapt resource value: 0x7f0a0076
+			public const int design_error = 2131361910;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int design_fab_shadow_end_color = 2131361857;
@@ -1403,8 +1403,8 @@ namespace Huiza
 			// aapt resource value: 0x7f0a0048
 			public const int design_snackbar_background_color = 2131361864;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int design_tint_password_toggle = 2131361909;
+			// aapt resource value: 0x7f0a0077
+			public const int design_tint_password_toggle = 2131361911;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int dim_foreground_disabled_material_dark = 2131361814;
@@ -1433,14 +1433,14 @@ namespace Huiza
 			// aapt resource value: 0x7f0a001e
 			public const int highlighted_text_material_light = 2131361822;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int iron = 2131361884;
+			// aapt resource value: 0x7f0a005e
+			public const int iron = 2131361886;
 			
-			// aapt resource value: 0x7f0a0056
-			public const int jet = 2131361878;
+			// aapt resource value: 0x7f0a0058
+			public const int jet = 2131361880;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int jumbo = 2131361881;
+			// aapt resource value: 0x7f0a005b
+			public const int jumbo = 2131361883;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int material_blue_grey_800 = 2131361823;
@@ -1478,8 +1478,8 @@ namespace Huiza
 			// aapt resource value: 0x7f0a002a
 			public const int material_grey_900 = 2131361834;
 			
-			// aapt resource value: 0x7f0a0058
-			public const int monsoon = 2131361880;
+			// aapt resource value: 0x7f0a005a
+			public const int monsoon = 2131361882;
 			
 			// aapt resource value: 0x7f0a0049
 			public const int notification_action_color_filter = 2131361865;
@@ -1490,14 +1490,17 @@ namespace Huiza
 			// aapt resource value: 0x7f0a003f
 			public const int notification_material_background_media_default_color = 2131361855;
 			
-			// aapt resource value: 0x7f0a0057
-			public const int oil = 2131361879;
+			// aapt resource value: 0x7f0a0059
+			public const int oil = 2131361881;
+			
+			// aapt resource value: 0x7f0a0051
+			public const int primary = 2131361873;
 			
 			// aapt resource value: 0x7f0a004f
-			public const int primary = 2131361871;
+			public const int primaryText = 2131361871;
 			
-			// aapt resource value: 0x7f0a0050
-			public const int primary_dark = 2131361872;
+			// aapt resource value: 0x7f0a0052
+			public const int primary_dark = 2131361874;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int primary_dark_material_dark = 2131361835;
@@ -1505,8 +1508,8 @@ namespace Huiza
 			// aapt resource value: 0x7f0a002c
 			public const int primary_dark_material_light = 2131361836;
 			
-			// aapt resource value: 0x7f0a0051
-			public const int primary_darker = 2131361873;
+			// aapt resource value: 0x7f0a0053
+			public const int primary_darker = 2131361875;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int primary_material_dark = 2131361837;
@@ -1532,6 +1535,9 @@ namespace Huiza
 			// aapt resource value: 0x7f0a0034
 			public const int ripple_material_light = 2131361844;
 			
+			// aapt resource value: 0x7f0a0050
+			public const int secondaryText = 2131361872;
+			
 			// aapt resource value: 0x7f0a0035
 			public const int secondary_text_default_material_dark = 2131361845;
 			
@@ -1553,11 +1559,11 @@ namespace Huiza
 			// aapt resource value: 0x7f0a003a
 			public const int switch_thumb_disabled_material_light = 2131361850;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int switch_thumb_material_dark = 2131361910;
+			// aapt resource value: 0x7f0a0078
+			public const int switch_thumb_material_dark = 2131361912;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int switch_thumb_material_light = 2131361911;
+			// aapt resource value: 0x7f0a0079
+			public const int switch_thumb_material_light = 2131361913;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int switch_thumb_normal_material_dark = 2131361851;
@@ -1571,14 +1577,14 @@ namespace Huiza
 			// aapt resource value: 0x7f0a003e
 			public const int tooltip_background_light = 2131361854;
 			
-			// aapt resource value: 0x7f0a0054
-			public const int verde = 2131361876;
+			// aapt resource value: 0x7f0a0056
+			public const int verde = 2131361878;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int viewBg = 2131361886;
+			// aapt resource value: 0x7f0a0060
+			public const int viewBg = 2131361888;
 			
-			// aapt resource value: 0x7f0a005d
-			public const int white = 2131361885;
+			// aapt resource value: 0x7f0a005f
+			public const int white = 2131361887;
 			
 			static Color()
 			{
@@ -2603,8 +2609,8 @@ namespace Huiza
 			// aapt resource value: 0x7f0800a5
 			public const int btn_login = 2131230885;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int btn_register = 2131230907;
+			// aapt resource value: 0x7f0800bc
+			public const int btn_register = 2131230908;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2756,6 +2762,9 @@ namespace Huiza
 			// aapt resource value: 0x7f0800a4
 			public const int input_password = 2131230884;
 			
+			// aapt resource value: 0x7f0800bb
+			public const int input_password_confirmation = 2131230907;
+			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
 			
@@ -2774,8 +2783,8 @@ namespace Huiza
 			// aapt resource value: 0x7f080018
 			public const int line3 = 2131230744;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int link_login = 2131230908;
+			// aapt resource value: 0x7f0800bd
+			public const int link_login = 2131230909;
 			
 			// aapt resource value: 0x7f0800a6
 			public const int link_signup = 2131230886;
@@ -2792,14 +2801,14 @@ namespace Huiza
 			// aapt resource value: 0x7f08008e
 			public const int main_content = 2131230862;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int masked = 2131230911;
+			// aapt resource value: 0x7f0800c0
+			public const int masked = 2131230912;
 			
 			// aapt resource value: 0x7f0800ad
 			public const int media_actions = 2131230893;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int message = 2131230909;
+			// aapt resource value: 0x7f0800be
+			public const int message = 2131230910;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -3056,8 +3065,8 @@ namespace Huiza
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800be
-			public const int visible = 2131230910;
+			// aapt resource value: 0x7f0800bf
+			public const int visible = 2131230911;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;

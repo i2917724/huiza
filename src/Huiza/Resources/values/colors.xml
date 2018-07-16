@@ -4,12 +4,13 @@
   <color name="colorPrimaryDark">#1B3147</color>
   <color name="colorAccent">#424242</color>
   <color name="splash_background">#000000</color>
-
+  <color name="primaryText">#ffffff</color>
+  <color name="secondaryText">#888888</color>
   <color name="primary">#212121</color>
   <color name="primary_dark">#000000</color>
   <color name="primary_darker">#C2CF19</color>
   <color name="accent">#FFFFFF</color>
-  <color name="background">#303030</color>
+  <color name="background">#121212</color>
   
 
   <color name="verde">#C2CF19</color>

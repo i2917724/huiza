@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Huiza.Presenters;
 
 namespace Huiza.Activities
 {
@@ -26,6 +27,8 @@ namespace Huiza.Activities
         EditText name;
         EditText email;
         EditText password;
+        EditText password_confirmation;
+        RegisterPresenter registerPresenter;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -38,8 +41,10 @@ namespace Huiza.Activities
             name = FindViewById<EditText>(Resource.Id.input_name);
             email = FindViewById<EditText>(Resource.Id.input_email);
             password = FindViewById<EditText>(Resource.Id.input_password);
+            password_confirmation = FindViewById<EditText>(Resource.Id.input_password_confirmation);
 
-            register.Click += registerClient;
+            this.registerPresenter = new RegisterPresenter(this);
+            register.Click += RegisterClient;
             login.Click += loginClient;
         }
 
@@ -49,22 +54,9 @@ namespace Huiza.Activities
             Finish();
             this.StartActivity(newActivity);
         }
-        public void registerClient(object sender, EventArgs args)
+        public void RegisterClient(object sender, EventArgs args)
         {
-            if (string.IsNullOrEmpty(email.Text) || 
-                string.IsNullOrEmpty(password.Text) || 
-                string.IsNullOrEmpty(name.Text)) //validate empty fields 
-            {
-                Snackbar.Make(register, "Campos vacíos!", Snackbar.LengthLong)
-                                .Show();
-            }
-            else
-            {
-                Intent newActivity = new Intent(this, typeof(CatalogProductActivity));
-                Finish();
-                this.StartActivity(newActivity);
-            }
-
+            this.registerPresenter.Register(sender,args,email.Text,password.Text,name.Text,password_confirmation.Text);
         }
     }
 }

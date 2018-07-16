@@ -11,7 +11,6 @@ using Android.Views;
 
 using Android.Widget;
 using Huiza.Presenters;
-using Huiza.Adapters;
 using Android.Support.V7.App;
 
 namespace Huiza.Activities
