@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Huiza.Activities;
@@ -25,9 +26,9 @@ namespace Huiza.Presenters
             this.context = _context;
         }
 
-        public async void Register(object sender, EventArgs args, string email, string password,string name,string password_confirmation)
+        public async void Register(object sender, EventArgs args, EditText email, EditText password, EditText name, EditText password_confirmation, AppCompatButton register)
         {
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email.Text))
             {
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
@@ -37,7 +38,7 @@ namespace Huiza.Presenters
                 builder.Create().Show();
                 return;
             }
-            if (!IsValidEmail(email))
+            if (!IsValidEmail(email.Text))
             {
 
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
@@ -49,7 +50,7 @@ namespace Huiza.Presenters
                 return;
             }
 
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name.Text))
             {
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
@@ -60,7 +61,7 @@ namespace Huiza.Presenters
                 return;
             }
 
-            if (string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(password.Text))
             {
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
@@ -70,7 +71,7 @@ namespace Huiza.Presenters
                 builder.Create().Show();
                 return;
             }
-            if (password.Length < 6)
+            if (password.Text.Length < 6)
             {
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
@@ -81,7 +82,7 @@ namespace Huiza.Presenters
                 return;
             }
 
-            if (!password_confirmation.Equals(password))
+            if (!password_confirmation.Text.Equals(password.Text))
             {
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
@@ -94,22 +95,26 @@ namespace Huiza.Presenters
 
 
 
-
-            var tokenResponse = await apiService.GetTokenRegister("http://comercialhuizaperu.com", email, password,name);
+            register.Text = "Cargando..";
+            var tokenResponse = await apiService.GetTokenRegister("http://comercialhuizaperu.com", email.Text, password.Text, name.Text);
+            register.Text = "Crear una cuenta";
 
             if (tokenResponse.error != null)
             {
-                
+                name.Text = "";
+                email.Text = "";
+                password.Text = "";
+                password_confirmation.Text = "";
+
                 var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
 
-                builder.SetTitle("Error")
+                builder.SetTitle("Success")
                        .SetMessage(tokenResponse.error);
 
                 builder.Create().Show();
                 return;
-                
-
             }
+
 
             Intent intent = new Intent(context, typeof(CatalogProductActivity));
             ((RegisterActivity)(context)).Finish();

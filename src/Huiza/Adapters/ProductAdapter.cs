@@ -9,91 +9,84 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+
 using Huiza.Models;
 using Square.Picasso;
+using Android.Support.V7.Widget;
+using Huiza.Activities;
+using Newtonsoft.Json;
 
 namespace Huiza.Adapters
 {
-    class ProductAdapter : BaseAdapter<Product>
+    public class ProductViewHolder : RecyclerView.ViewHolder, View.IOnClickListener
     {
+        public TextView txtName { get; set; }
+        public TextView txtPrice { get; set; }
+        public ImageView imageViewCover { get; set; }
+        private IItemClickListenener itemClickListener;
 
-        Context context;
-        List<Product> list;
-
-        public ProductAdapter(Context context, List<Product> _list)
+        public ProductViewHolder(View itemView) : base(itemView)
         {
-            this.context = context;
-            this.list = _list;
+            txtName = itemView.FindViewById<TextView>(Resource.Id.title);
+            txtPrice = itemView.FindViewById<TextView>(Resource.Id.price);
+            imageViewCover = itemView.FindViewById<ImageView>(Resource.Id.thumbnail);
+            itemView.SetOnClickListener(this);
+
+        }
+        public void SetItemClickListener(IItemClickListenener itemClickListener)
+        {
+            this.itemClickListener = itemClickListener;
         }
 
-
-        public override Java.Lang.Object GetItem(int position)
+        public void OnClick(View v)
         {
-            return position;
+            itemClickListener.OnClick(v, AdapterPosition);
         }
-
-        public override long GetItemId(int position)
-        {
-            return position;
-        }
-
-        public override View GetView(int position, View convertView, ViewGroup parent)
-        {
-            var view = convertView;
-            ProductAdapterViewHolder holder = null;
-
-            if (view != null)
-                holder = view.Tag as ProductAdapterViewHolder;
-
-            if (holder == null)
-            {
-                holder = new ProductAdapterViewHolder();
-                var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
-                //replace with your item and your holder items
-                //comment back in
-                
-                view = inflater.Inflate(Resource.Layout.adapter_product, parent, false);
-                holder.Name = view.FindViewById<TextView>(Resource.Id.title);
-                holder.Price = view.FindViewById<TextView>(Resource.Id.price);
-                
-                view.Tag = holder;
-            }
-
-
-            //fill in your items
-            holder.Name.Text = list[position].name;
-            holder.Price.Text = "S/." + list[position].price.ToString();
-
-            Picasso.With(context)
-                .Load(list[position].image)
-                .Into(view.FindViewById<ImageView>(Resource.Id.thumbnail));
-
-            return view;
-        }
-
-        //Fill in cound here, currently 0
-        public override int Count
-        {
-            get
-            {
-                return list.Count;
-            }
-        }
-        public override Product this[int position]
-        {
-            get
-            {
-                return list[position];
-            }
-        }
-
     }
 
-    class ProductAdapterViewHolder : Java.Lang.Object
+    public class ProductAdapter : RecyclerView.Adapter, IItemClickListenener
     {
-        //Your adapter views to re-use
-        public TextView Name { get; set; }
-        public TextView Price { get; set; }
-        public ImageView Image { get; set; }
+
+        private List<Product> lsProduct = new List<Product>();
+        private Activity activity;
+        public ProductAdapter(Activity activity, List<Product> lsProduct)
+        {
+            this.activity = activity;
+            this.lsProduct = lsProduct;
+        }
+
+        public override int ItemCount
+        {
+            get
+            {
+                return lsProduct.Count;
+            }
+        }
+
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            ProductViewHolder vh = holder as ProductViewHolder;
+            vh.txtName.Text = lsProduct[position].name;
+            vh.txtPrice.Text = "S/." + lsProduct[position].price.ToString();
+
+            Picasso.With(activity)
+                .Load(lsProduct[position].image)
+                .Into(vh.imageViewCover);
+            vh.SetItemClickListener(this);
+        }
+        public void OnClick(View itemView, int position)
+        {
+            Intent intent = new Intent(activity, typeof(ShowProductActivity));
+            var product = lsProduct[position];
+
+            intent.PutExtra("product", JsonConvert.SerializeObject(product));
+            activity.StartActivity(intent);
+        }
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            View view = LayoutInflater.From(parent.Context)
+                .Inflate(Resource.Layout.adapter_product, parent, false);
+            return new ProductViewHolder(view);
+        }
     }
 }

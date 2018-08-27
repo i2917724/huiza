@@ -47,7 +47,7 @@ namespace Huiza.Activities
         }
         public void LoginClient(object sender, EventArgs args)
         {
-            this.loginPresenter.Authentication(sender,args,email.Text,password.Text);
+            this.loginPresenter.Authentication(sender,args,email.Text,password.Text,login);
         }
 
 

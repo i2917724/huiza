@@ -64,6 +64,7 @@
             try
             {
                 var client = new HttpClient();
+
                 client.BaseAddress = new Uri(urlBase);
                 var response = await client.PostAsync("/api/auth/login",
                     new StringContent(string.Format(
@@ -80,7 +81,57 @@
                 return null;
             }
         }
+        /*
+        public async Task<Response> GetTokenCulqui(
+            string card_number,
+            string cvv,
+            string expiration_month,
+            string expiration_year,
+            string email)
+                {
+            try
+            {
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization =
+                  new AuthenticationHeaderValue("Bearer", "sk_test_Km1vANGLrdAE8jKm");
+                Cart card = new Cart(card_number, cvv, expiration_month, expiration_year, email);
 
+                client.BaseAddress = new Uri("https://api.culqi.com");
+                var response = await client.PostAsync("/v2/tokens",
+                    new StringContent(JsonConvert.SerializeObject(card),
+                    Encoding.UTF8, "application/json"));
+
+                var resultJSON = await response.Content.ReadAsStringAsync();
+        
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = resultJSON,
+                    };
+                }
+
+                var result = JsonConvert.DeserializeObject<TokenResponse>(resultJSON);
+
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Ok",
+                    Result = result,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        */
 
         public async Task<TokenResponse> GetTokenRegister(
             string urlBase,

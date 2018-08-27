@@ -56,7 +56,7 @@ namespace Huiza.Activities
         }
         public void RegisterClient(object sender, EventArgs args)
         {
-            this.registerPresenter.Register(sender,args,email.Text,password.Text,name.Text,password_confirmation.Text);
+            this.registerPresenter.Register(sender,args,email,password,name,password_confirmation, register);
         }
     }
 }

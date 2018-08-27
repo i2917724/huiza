@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Huiza.Services;
 using Huiza.Activities;
+using Android.Support.V7.Widget;
 
 namespace Huiza.Presenters
 {
@@ -24,7 +25,7 @@ namespace Huiza.Presenters
             this.context = _context;
         }
 
-        public async void Authentication(object sender, EventArgs args,string email, string password)
+        public async void Authentication(object sender, EventArgs args,string email, string password, AppCompatButton login)
         {
             if (string.IsNullOrEmpty(email))
             {
@@ -70,9 +71,11 @@ namespace Huiza.Presenters
                 return;
             }
 
+            login.Text = "Cargando...";
 
             var tokenResponse = await apiService.GetToken("http://comercialhuizaperu.com",email,password);
 
+            login.Text = "Iniciar sesión";
             if (tokenResponse.error != null)
             {
                 
